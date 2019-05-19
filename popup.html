@@ -1,0 +1,162 @@
+<!doctype html>
+<html>  
+<style>
+  	 #jwgescontent button {
+		height: 30px;
+		width: 30px;
+		outline: none;
+	  }
+  .tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #4d4d4d;
+  color: white;
+	}
+
+	.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 10px 10px;
+	transition: 0.3s;
+  color: white;
+  
+	}
+
+	.tab button:hover {
+	background-color: #cccccc;
+	}
+
+	.tab button.active {
+	background-color: #b3c6ff;
+	}
+
+	.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+	}
+	#container {
+		width: 320px;
+		height:0px;
+	}
+.btn-group button {
+  background-color: #008CBA; /* Green background */
+  border: 1px solid black; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+	margin-top: 10px;
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+.h4-align {
+  margin-top: 2px;
+  margin-bottom: 2px;
+ }
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+</style>
+  <head>
+    <title>Autofiller</title>
+  </head>
+  <body>
+    <div id="container"></div>
+      <div class="tab">
+          <button class="tablinks active" id='epsLoadButton'>Load From EPS</button>
+          <button class="tablinks" id='PCButton'>PC</button>
+          <button class="tablinks" id='LaptopButton'>Laptop</button>
+			    <button class="tablinks" id='MiscButton'>Misc</button>
+			    <button class="tablinks" id='DSButton'>DS</button>
+      </div>
+		<div id="Load From EPS" class="tabcontent" style="display:block;">
+			<div>
+				<h1>Autofiller</h1>
+				<p id="demo"></p>
+				<div class="btn-group">
+						<button id="fillProcessor">Load From EPS</button>
+						<button id="copyLog">Copy Log Files</button>
+				</div>
+			</div></div>
+		<div id="PC" class="tabcontent">
+
+				<h4 class="h4-align">Caddy</h4><label><input type="checkbox" id="hasCaddy" name="note3" value="Has Caddy">Has Caddy</label>
+				<label><input type="checkbox" id="noCaddy" name="note14" value="No Caddy">No Caddy</label></br>
+
+				<h4 class="h4-align">Missing Components</h4><label><input type="checkbox" id="noHDD" name="note5" value="No Hard Drive Included">No Hard Drive Included</label>
+				<label><input type="checkbox" id="noRam" name="note7" value="No Ram Included">No Ram Included</label></br>
+				<label><input type="checkbox" id="noOptical" name="note6" value="No Optical Drive Included">No Optical Drive Included</label></br>
+
+				<h4 class="h4-align">Computrace</h4><label><input type="checkbox" id="noCompu" name="note9" value="No Computrace On Unit">No Computrace On Unit</label></br>
+				<label><input type="checkbox" id="compuActive" name="note10" value="Computrace Activated On Unit">Computrace Activated On Unit</label></br>
+
+				<h4 class="h4-align">Misc</h4><label><input type="checkbox" id="econResale" name="note11" value="Not economical for Resale">Not Economical for Resale</label>
+				<label><input type="checkbox" id="noPower" name="note13" value="Will Not Power On">Will Not Power On</label></br>
+				<Label><input type="checkbox" id="manDS" name="note0" value="Manual DS">Manual DS</Label>
+				<Label><input type="checkbox" id="foundCD" name="note0" value="Found CD/DVD in unit">Found CD/DVD in unit</Label></br>
+				<Label><input type="checkbox" id="ssdEncrypted" name="note18" value="SSD/HDD Encrypted">SSD/HDD Encrypted</Label></br>
+
+				<h4 class="h4-align">By:</h4><label><input type="checkbox" id="byAL" name="note12" value="Original audit by AL">AL</label>
+				<label><input type="checkbox" id="byDH" name="note13" value="Original audit by DH">DH</label>
+				<label><input type="checkbox" id="byJS" name="note14" value="Original audit by JS">JS</label>
+				<label><input type="checkbox" id="byJW" name="note15" value="Original audit by JW">JW</label>
+				<label><input type="checkbox" id="byMS" name="note16" value="Original audit by MS">MS</label>
+
+				<h4 class="h4-align">Grade:</h4><label><input type="checkbox" id="gradeA" name="note17" value="A">A</label>
+				<label><input type="checkbox" id="gradeB" name="note17" value="B">B</label>
+				<label><input type="checkbox" id="gradeC" name="note17" value="C">C</label>
+				<label><input type="checkbox" id="gradeF" name="note17" value="F">F</label>
+
+				<div class="btn-group"><button id="pcNoteSubmit">Submit</button></div>
+		</div>
+		<div id="Laptop" class="tabcontent">
+			<h4 class="h4-align">Adapter</h4><Label><input type="checkbox" id="hasAdapter" name="note1" value="Has Adapter">Has Adapter</label>
+			<Label><input type="checkbox" id="noAdapter" name="note2" value="No Adapter">No Adapter</Label>
+			
+			<h4 class="h4-align">Caddy</h4><label><input type="checkbox" id="hasCaddy2" name="note3" value="Has Caddy">Has Caddy</label>
+			<label><input type="checkbox" id="noCaddy2" name="note14" value="No Caddy">No Caddy</label></br>
+
+			<h4 class="h4-align">Battery</h4><label><input type="checkbox" id="noBattery" name="note4" value="No Battery Included">No Battery Included</label>
+			<label><input type="checkbox" id="batRemoved" name="note8" value="Faulty Battery Removed">Faulty Battery Removed</label>
+			<label><input type="checkbox" id="faultyBat" name="note13" value="Battery Removed">Battery Removed</label></br>
+
+			<h4 class="h4-align">Missing Components</h4><label><input type="checkbox" id="noHDD2" name="note5" value="No Hard Drive Included">No Hard Drive Included</label>
+			<label><input type="checkbox" id="noRam2" name="note7" value="No Ram Included">No Ram Included</label></br>
+			<label><input type="checkbox" id="noOptical2" name="note6" value="No Optical Drive Included">No Optical Drive Included</label></br>
+
+			<h4 class="h4-align">Computrace</h4><label><input type="checkbox" id="noCompu2" name="note9" value="No Computrace On Unit">No Computrace On Unit</label></br>
+			<label><input type="checkbox" id="compuActive2" name="note10" value="Computrace Activated On Unit">Computrace Activated On Unit</label></br>
+
+			<h4 class="h4-align">Misc</h4><label><input type="checkbox" id="econResale2" name="note11" value="Not economical for Resale">Not Economical for Resale</label>
+			<label><input type="checkbox" id="noPower2" name="note13" value="Will Not Power On">Will Not Power On</label></br>
+			<label><input type="checkbox" id="supervisorPass2" name="note12" value="Unable to Bypass Bios Password">Unable to Bypass Bios Password</label>
+			<Label><input type="checkbox" id="manDS2" name="note0" value="Manual DS">Manual DS</Label></br>
+			<Label><input type="checkbox" id="foundCD2" name="note17" value="Found CD/DVD in unit">Found CD/DVD in unit</Label>
+			<Label><input type="checkbox" id="ssdEncrypted2" name="note18" value="SSD/HDD Encrypted">SSD/HDD Encrypted</Label></br>
+			
+			<h4 class="h4-align">By:</h4><label><input type="checkbox" id="byAL2" name="note12" value="Original audit by AL">AL</label>
+			<label><input type="checkbox" id="byDH2" name="note13" value="Original audit by DH">DH</label>
+			<label><input type="checkbox" id="byJS2" name="note14" value="Original audit by JS">JS</label>
+			<label><input type="checkbox" id="byJW2" name="note15" value="Original audit by JW">JW</label>
+			<label><input type="checkbox" id="byMS2" name="note16" value="Original audit by MS">MS</label>
+
+			<h4 class="h4-align">Grade:</h4><label><input type="checkbox" id="gradeA2" name="note17" value="A">A</label>
+			<label><input type="checkbox" id="gradeB2" name="note17" value="B">B</label>
+			<label><input type="checkbox" id="gradeC2" name="note17" value="C">C</label>
+			<label><input type="checkbox" id="gradeF2" name="note17" value="F">F</label>
+
+
+			<div class="btn-group"><button id="laptopNoteSubmit">Submit</button></div>
+		</div>
+	<script src="popup.js"></script>
+	</body>
+</html>
